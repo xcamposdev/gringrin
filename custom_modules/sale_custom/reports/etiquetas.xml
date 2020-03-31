@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<odoo>
+	<template id="report_etiquetas">
+		<t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <div class="page">
+                    
+                    <t t-set="total_qty" t-value="0"/>
+                    <t t-foreach="doc.order_line" t-as="line">
+                        <t t-set="total_qty" t-value="total_qty + int(line.product_uom_qty)"/>
+                    </t>
+                    
+                    <t t-set="i" t-value="1"/>
+                    
+                    <t t-foreach="doc.order_line" t-as="line">
+                        <t t-set="q" t-value="int(line.product_uom_qty)"/>
+                        <t t-foreach="range(q)" t-as="l">
+                            <div align="center" class="col-xs-6">
+                                <strong>No. Pedido:</strong>
+                                <p class="m-0" t-field="doc.name"/>
+                                <strong>Destinatario:</strong>
+                                <p class="m-0" t-field="doc.partner_shipping_id"/>
+                                <p class="m-0" t-field="doc.partner_shipping_id.street"/>
+                                <p class="m-0" t-field="doc.partner_shipping_id.city"/>
+								<strong>Propietario:</strong><br/><br/>
+                                <span>GRINGRIN FOODS S.L. // Bultos:</span><span><t t-esc="i"/></span><span>/<t t-esc="total_qty"/></span><br/><br/>
+                                <strong>Temperatura:</strong>
+                                <p class="m-0" t-if="line.product_id.x_studio_temperatura" t-field="line.product_id.x_studio_temperatura"/>
+                                <br/>
+                            </div>
+                            <t t-set="i" t-value="i+1"/>
+                        </t>
+                    </t>
+                </div>
+            </t>
+		</t>
+	</template>
+</odoo>
