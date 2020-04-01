@@ -20,8 +20,7 @@
                                 <p class="m-0" t-field="doc.name"/>
                                 <strong>Destinatario:</strong>
                                 <p class="m-0" t-field="doc.partner_shipping_id"/>
-                                <p class="m-0" t-field="doc.partner_shipping_id.street"/>
-                                <p class="m-0" t-field="doc.partner_shipping_id.city"/>
+                                <span class="m-0" t-field="doc.partner_shipping_id.street"/> // <span class="m-0" t-field="doc.partner_shipping_id.city"/><br/><br/><span class="m-0" t-field="doc.partner_shipping_id.state_id"/> // <span class="m-0" t-field="doc.partner_shipping_id.zip"/><br/><br/>
 								<strong>Propietario:</strong><br/><br/>
                                 <span>GRINGRIN FOODS S.L. // Bultos:</span><span><t t-esc="i"/></span><span>/<t t-esc="total_qty"/></span><br/><br/>
                                 <strong>Temperatura:</strong>
