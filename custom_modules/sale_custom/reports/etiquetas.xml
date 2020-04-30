@@ -25,7 +25,7 @@
                                 <span>GRINGRIN FOODS S.L. // Bultos:</span><span><t t-esc="i"/></span><span>/<t t-esc="total_qty"/></span><br/><br/>
                                 <strong>Temperatura:</strong>
                                 <p class="m-0" t-if="line.product_id.x_studio_temperatura" t-field="line.product_id.x_studio_temperatura"/>
-                                <br/>
+                                <!--<br/>-->
                             </div>
                             <t t-set="i" t-value="i+1"/>
                         </t>
